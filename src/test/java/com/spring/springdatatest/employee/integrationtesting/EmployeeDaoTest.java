@@ -1,7 +1,6 @@
-package com.spring.springdatatest.employee.unittesting;
+package com.spring.springdatatest.employee.integrationtesting;
 
 import com.spring.springdata.employee.dao.EmployeeDao;
-import com.spring.springdata.employee.model.Employee;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
