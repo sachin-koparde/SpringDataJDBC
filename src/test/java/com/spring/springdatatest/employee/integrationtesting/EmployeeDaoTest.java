@@ -1,6 +1,8 @@
 package com.spring.springdatatest.employee.integrationtesting;
 
+//import com.spring.springdata.employee.dao.EmployeeDao;
 import com.spring.springdata.employee.dao.EmployeeDao;
+import com.spring.springdata.employee.dao.EmployeeDaoImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -17,7 +19,7 @@ public class EmployeeDaoTest {
                 .addScripts("classpath:schema.sql", "classpath:test-data.sql")
                 .build();
 
-        EmployeeDao employeeDao = new EmployeeDao();
+        EmployeeDao employeeDao = new EmployeeDaoImpl();
 
         employeeDao.setDataSource(dataSource);
 

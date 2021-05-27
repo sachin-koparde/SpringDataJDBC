@@ -1,6 +1,6 @@
-package com.spring.springdata.employee.main;
+package com.spring.springdata.employee;
 
-import com.spring.springdata.employee.configure.AppConfig;
+import com.spring.springdata.employee.config.AppConfig;
 import com.spring.springdata.employee.controller.EmployeeController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

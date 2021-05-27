@@ -1,34 +1,19 @@
 package com.spring.springdata.employee.service;
 
-import com.spring.springdata.employee.dao.EmployeeDao;
 import com.spring.springdata.employee.model.Employee;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class EmployeeService {
+public abstract class EmployeeService {
 
-    @Autowired
-    private EmployeeDao employeeDao;
+    public abstract void saveEmployee(Employee employee);
 
-    public void saveEmployee(Employee employee) {
-        employeeDao.save(employee);
-    }
+    public abstract Employee getEmployeeById(int id);
 
-    public Employee getEmployeeById(int id) {
-        return employeeDao.load(id);
-    }
+    public abstract List<Employee> getAllEmployee();
 
-    public List<Employee> getAllEmployee() {
-        return employeeDao.loadAll();
-    }
+    public abstract void updateEmployee(int id, float newSalary);
 
-    public void updateEmployee(int id, float newSalary) {
-        employeeDao.updateSalary(id, newSalary);
-    }
-
-    public void deleteEmployee(int id) {
-        employeeDao.delete(id);
-    }
+    public abstract void deleteEmployee(int id);
 
 }

@@ -15,26 +15,26 @@ public class EmployeeController {
 
     public void init() {
 
-//        Employee employee = Employee.createEmployee(1, "Mahesh", 42000);
-//        employeeService.saveEmployee(employee);
-//
-//        employee = Employee.createEmployee(2, "John", 15000);
-//        employeeService.saveEmployee(employee);
-//
-//        employee = Employee.createEmployee(3, "Kiran", 34000);
-//        employeeService.saveEmployee(employee);
-//
-//        LOGGER.info("Three employee data is inserted");
-//
-//        employee = employeeService.getEmployeeById(1);
-//
-//        LOGGER.info("Employee found by Id: " + employee);
-//
-//        getAllEmployeeAndCheck();
-//
-//        employeeService.updateEmployee(1, 56034);
-//
-//        LOGGER.info("Salary updated: " + employeeService.getEmployeeById(1));
+        Employee employee = Employee.createEmployee(1, "Mahesh", 42000);
+        employeeService.saveEmployee(employee);
+
+        employee = Employee.createEmployee(2, "John", 15000);
+        employeeService.saveEmployee(employee);
+
+        employee = Employee.createEmployee(3, "Kiran", 34000);
+        employeeService.saveEmployee(employee);
+
+        LOGGER.info("Three employee data is inserted");
+
+        employee = employeeService.getEmployeeById(1);
+
+        LOGGER.info("Employee found by Id: " + employee);
+
+        getAllEmployeeAndCheck();
+
+        employeeService.updateEmployee(1, 56034);
+
+        LOGGER.info("Salary updated: " + employeeService.getEmployeeById(1));
 
         employeeService.deleteEmployee(2);
 

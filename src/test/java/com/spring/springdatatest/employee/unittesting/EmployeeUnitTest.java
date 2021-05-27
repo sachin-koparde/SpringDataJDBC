@@ -1,6 +1,7 @@
 package com.spring.springdatatest.employee.unittesting;
 
 import com.spring.springdata.employee.dao.EmployeeDao;
+import com.spring.springdata.employee.dao.EmployeeDaoImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -30,7 +31,7 @@ public class EmployeeUnitTest {
     @Test
     public void mockJdbcTemplateTest() {
 
-        EmployeeDao employeeDao = new EmployeeDao();
+        EmployeeDao employeeDao = new EmployeeDaoImpl();
         ReflectionTestUtils.setField(employeeDao, "jdbcTemplate", jdbcTemplate);
         when(jdbcTemplate.queryForObject(QUERY_FETCH_EMPLOYEE_COUNT, (HashMap) null, Integer.class))
                 .thenReturn(4);
