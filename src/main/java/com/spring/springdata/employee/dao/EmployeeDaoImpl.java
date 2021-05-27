@@ -4,15 +4,18 @@ import com.spring.springdata.employee.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 
+@Component
 @Repository
 public class EmployeeDaoImpl implements EmployeeDao{
 
@@ -53,9 +56,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
     public Employee load(int id) {
 
         List<Employee> employees = jdbcTemplate.query(QUERY_FETCH_BY_ID,
-                new MapSqlParameterSource("id", id), (resultSet, i) -> {
-                    return toEmployee(resultSet);
-                });
+                new MapSqlParameterSource("id", id), (resultSet, i) -> toEmployee(resultSet));
 
         if(employees.size() == 1) {
 
@@ -67,7 +68,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
     }
 
     @Override
-    public void updateSalary(int id, float newSalary) {
+    public void updateSalary(int id, BigDecimal newSalary) {
 
         jdbcTemplate.update(QUERY_UPDATE_SALARY,
                 new MapSqlParameterSource("id", id).addValue("salary", newSalary));
@@ -101,7 +102,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
         Employee employee = new Employee();
         employee.setEmployeeId(resultSet.getInt("id"));
         employee.setEmployeeName(resultSet.getString("name"));
-        employee.setEmployeeSalary(resultSet.getFloat("salary"));
+        employee.setEmployeeSalary(resultSet.getBigDecimal("salary"));
 
         return employee;
 

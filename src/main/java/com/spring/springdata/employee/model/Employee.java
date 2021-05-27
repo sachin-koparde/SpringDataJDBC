@@ -1,20 +1,15 @@
 package com.spring.springdata.employee.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class Employee implements Serializable {
 
     private int employeeId;
     private String employeeName;
-    private float employeeSalary;
+    private BigDecimal employeeSalary;
 
     public Employee() {
-    }
-
-    public Employee(int employeeId, String employeeName, float employeeSalary) {
-        this.employeeId = employeeId;
-        this.employeeName = employeeName;
-        this.employeeSalary = employeeSalary;
     }
 
     public int getEmployeeId() {
@@ -33,11 +28,11 @@ public class Employee implements Serializable {
         this.employeeName = employeeName;
     }
 
-    public float getEmployeeSalary() {
+    public BigDecimal getEmployeeSalary() {
         return employeeSalary;
     }
 
-    public void setEmployeeSalary(float employeeSalary) {
+    public void setEmployeeSalary(BigDecimal employeeSalary) {
         this.employeeSalary = employeeSalary;
     }
 
@@ -50,7 +45,7 @@ public class Employee implements Serializable {
                 '}';
     }
 
-    public static Employee createEmployee(int id, String name, float salary) {
+    public static Employee createEmployee(int id, String name, BigDecimal salary) {
 
         Employee employee = new Employee();
         employee.setEmployeeId(id);

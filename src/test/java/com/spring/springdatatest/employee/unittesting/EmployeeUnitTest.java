@@ -18,7 +18,7 @@ import java.util.HashMap;
 @ExtendWith(MockitoExtension.class)
 public class EmployeeUnitTest {
 
-    private String QUERY_FETCH_EMPLOYEE_COUNT = "SELECT COUNT(*) FROM EMPLOYEE";
+    private final String QUERY_FETCH_EMPLOYEE_COUNT = "SELECT COUNT(*) FROM EMPLOYEE";
 
     @Mock
     NamedParameterJdbcTemplate jdbcTemplate;
